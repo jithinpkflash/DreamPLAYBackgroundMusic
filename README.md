@@ -1,12 +1,17 @@
-On Create ( Initialisation )
-
+**On Create ( Initialisation )**
+````
 registerReceiver(SongDataReceiver,new IntentFilter("com.dplay.SONG_DATA"));
 
 registerReceiver(SongStateReceiver,new IntentFilter("com.dplay.SONG_STATE"));
+````
+**More Block ( Receive )**
 
-More Block ( Receive )
+Allign asd blocks as shown bellow
 
-ASD 1
+<img src="https://github.com/jithinpkflash/DreamPLAYBackgroundMusic/blob/f58296ab6d15b83643a2f4bc4744a42c66be6e9b/IMG_20211129_164325.jpg" width ="100%">
+
+**ASD 1**
+````
 }
 private BroadcastReceiver SongDataReceiver = new BroadcastReceiver() {
       @Override
@@ -14,28 +19,29 @@ private BroadcastReceiver SongDataReceiver = new BroadcastReceiver() {
 
 duration = intent.getStringExtra("total_duration");
 current = intent.getStringExtra("current_duration");
+````
+__// Your Seekbar and Time textview__
 
-********* Your Seekbar and Time textview *************
-
-ASD 2
+**ASD 2**
+````
 }
    };
 private BroadcastReceiver SongStateReceiver = new BroadcastReceiver() {
       @Override
       public void onReceive(Context context, Intent intent) {
-
 state = intent.getStringExtra("responce");
+````
+__// Set button state ( Pause or playing )__
 
-**********Set button state ( Pause or playing )********
-
-ASD 3
+**ASD 3**
+````
 }
    };
 {
+````
 
-
-Start or Stop Service 
-
+**Start or Stop Service**
+````
 if(button1.getText().equals("Start"))
 {
 Intent myService = new Intent(MainActivity.this, DreamPLAYBackgroundMusic.class);
@@ -50,25 +56,27 @@ stopService(myService);
 button1.setText("Start");
                     
 }
-
-PLAY / PAUSE button 
-
+````
+**PLAY / PAUSE button**
+````
 Intent intent=new Intent("com.dplay.SONG_CONTROL");
 intent.putExtra("data", "playpause");
 sendBroadcast(intent);
+````
 
-
-REQUEST State : ( Get playing or paused )
-
+**REQUEST State : ( Get playing or paused )**
+````
 Intent intent=new Intent("com.dplay.SONG_STATE");
 intent.putExtra("data", "state");
 sendBroadcast(intent);
-
-SEEK BAR on stop touch : ( To seek music )
-
+````
+**SEEK BAR on stop touch : ( To seek music )**
+````
 Intent intent=new Intent("com.dplay.SONG_SEEK");
 intent.putExtra("data", pos);
 sendBroadcast(intent);
+````
+__// pos is a string variable which we need to assign cureent Seekbar position__
 
-// pos is a string variable which we need to assign cureent Seekbar position
-
+WATCH VIDEO ON YOUTUBE
+<A href="https://youtube.com/c/DreamPLAYdevYT"> WATCH </a>
