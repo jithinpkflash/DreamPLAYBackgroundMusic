@@ -78,5 +78,11 @@ sendBroadcast(intent);
 ````
 __// pos is a string variable which we need to assign cureent Seekbar position__
 
+**Andorid manifest**
+````
+<service
+    android:name="DreamPLAYBackgroundMusic" >
+</service>
+````
 WATCH VIDEO ON YOUTUBE
 <A href="https://youtube.com/c/DreamPLAYdevYT"> WATCH </a>
